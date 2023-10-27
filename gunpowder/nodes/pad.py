@@ -27,6 +27,11 @@ class Pad(BatchFilter):
             a coordinate, this amount will be added to the ROI in the positive
             and negative direction.
 
+        mode (string):
+
+            One of 'constant' or 'reflect'.
+            Default is 'constant'
+
         value (scalar or ``None``):
 
             The value to report inside the padding. If not given, 0 is used.
@@ -36,6 +41,7 @@ class Pad(BatchFilter):
     def __init__(self, key, size, value=None):
         self.key = key
         self.size = size
+        self.mode = mode
         self.value = value
 
     def setup(self):
