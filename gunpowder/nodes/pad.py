@@ -35,10 +35,11 @@ class Pad(BatchFilter):
         value (scalar or ``None``):
 
             The value to report inside the padding. If not given, 0 is used.
+            Only used in case of 'constant' mode.
             Only used for :class:`Array<Arrays>`.
     """
 
-    def __init__(self, key, size, value=None):
+    def __init__(self, key, size, mode, value=None):
         self.key = key
         self.size = size
         self.mode = mode
